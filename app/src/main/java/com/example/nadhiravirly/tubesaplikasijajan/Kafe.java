@@ -16,7 +16,6 @@ import android.widget.ListView;
 public class Kafe extends AppCompatActivity {
     String[] daftar; //
     ListView ListView01;
-    Menu menu;
     protected Cursor cursor;
     SQLHelper dbHelper;
     public static Kafe ma;
@@ -47,7 +46,7 @@ public class Kafe extends AppCompatActivity {
             daftar[cc] = cursor.getString(1);
         }
 
-        ListView01 = (ListView)findViewById(R.id.ListView01);
+        ListView01 = findViewById(R.id.ListView01);
         ListView01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, daftar));
         ListView01.setSelected(true);
         ListView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
